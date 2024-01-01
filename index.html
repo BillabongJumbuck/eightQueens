@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>EightQueens</title>
+    <link href="index.css" rel="stylesheet" type="text/css"/>
+    <script src="index.js" charset="utf-8" defer></script>
+    <script src="BFS.js" charset="utf-8" defer></script>
+    <script src="Genetic.js" charset="utf-8" defer></script>
+</head>
+<body id="body">
+<table>
+    <tr>
+        <td  class="wh"><button id="00" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="01" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="02" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="03" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="04" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="05" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="06" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="07" onclick="click_01(this)"></button></td>
+    </tr>
+    <tr>
+        <td  class="bl"><button id="10" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="11" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="12" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="13" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="14" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="15" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="16" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="17" onclick="click_01(this)"></button></td>
+    </tr>
+    <tr>
+        <td  class="wh"><button id="20" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="21" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="22" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="23" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="24" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="25" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="26" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="27" onclick="click_01(this)"></button></td>
+    </tr>
+    <tr>
+        <td  class="bl"><button id="30" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="31" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="32" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="33" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="34" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="35" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="36" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="37" onclick="click_01(this)"></button></td>
+    </tr>
+    <tr>
+        <td  class="wh"><button id="40" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="41" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="42" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="43" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="44" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="45" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="46" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="47" onclick="click_01(this)"></button></td>
+    </tr>
+    <tr>
+        <td  class="bl"><button id="50" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="51" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="52" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="53" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="54" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="55" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="56" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="57" onclick="click_01(this)"></button></td>
+    </tr>
+    <tr>
+        <td  class="wh"><button id="60" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="61" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="62" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="63" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="64" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="65" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="66" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="67" onclick="click_01(this)"></button></td>
+    </tr>
+    <tr>
+        <td  class="bl"><button id="70" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="71" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="72" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="73" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="74" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="75" onclick="click_01(this)"></button></td>
+        <td  class="bl"><button id="76" onclick="click_01(this)"></button></td>
+        <td  class="wh"><button id="77" onclick="click_01(this)"></button></td>
+    </tr>
+</table>
+<button onclick="resetBoard()" class="btn"> Reset </button>
+<button onclick="start_01()" class="btn"> BFS </button>
+<button onclick="start_02()" class="btn"> 遗传 </button><br>
+<label>变异概率:<input type="text" value="0.1" id="input_01"></label>
+<label>最大迭代次数:<input type="text" value="1000" id="input_02"></label>
+<label>群体中的个体数<input type="text" value="100" id="input_03"></label>
+
+<div id="div_01"></div>
+</body>
+</html>
